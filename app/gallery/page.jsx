@@ -308,6 +308,8 @@ export default function GalleryPage() {
                     <img
                       src={item.image}
                       alt={item.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-44 sm:h-48 object-cover hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-3 sm:top-4 left-3 sm:left-4">

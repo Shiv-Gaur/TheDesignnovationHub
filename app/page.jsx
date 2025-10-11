@@ -303,6 +303,8 @@ export default function TDHPortfolio() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("animate-fade-in-up")
+          // Stop observing once animated to prevent re-triggering
+          observer.unobserve(entry.target)
         }
       })
     }, observerOptions)
@@ -329,7 +331,9 @@ export default function TDHPortfolio() {
                   alt="TDH Logo"
                   className="h-6 w-6 sm:h-8 sm:w-8 dark:invert"
                 />
-                <span className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white hover:scale-105 transition-transform duration-300">TDH</span>
+                <span className="text-sm sm:text-base md:text-lg font-bold text-gray-900 dark:text-white hover:scale-105 transition-transform duration-300">
+                  TheDesignnovationHub
+                </span>
               </div>
 
               {/* Desktop Navigation */}
@@ -549,6 +553,8 @@ export default function TDHPortfolio() {
                     <img
                       src={project.images[0] || "/placeholder.svg"}
                       alt={project.name}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-40 sm:h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -615,6 +621,8 @@ export default function TDHPortfolio() {
                     <img
                       src={event.images[0] || "/placeholder.svg"}
                       alt={event.name}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-40 sm:h-44 object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -678,6 +686,8 @@ export default function TDHPortfolio() {
                       <img
                         src={member.images[0] || "/placeholder.svg"}
                         alt={member.name}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-56 sm:h-60 lg:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

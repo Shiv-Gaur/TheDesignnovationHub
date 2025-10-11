@@ -158,6 +158,8 @@ export default function AboutPage() {
               <img
                 src="/placeholder.svg?height=400&width=400&text=Founder"
                 alt="Founder"
+                loading="lazy"
+                decoding="async"
                 className="rounded-lg shadow-lg w-full max-w-md mx-auto lg:max-w-full"
               />
             </div>
