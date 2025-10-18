@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import TypingCode from "@/components/TypingCode"
 import {
   Menu,
@@ -270,6 +270,13 @@ export default function TDHPortfolio() {
     }
   }
 
+  // Memoized logo filter style to prevent hydration issues
+  const logoFilterStyle = useMemo(() => ({
+    filter: isDarkMode 
+      ? 'saturate(1.6) brightness(1.3) contrast(1.2) drop-shadow(0 0 3px rgba(19, 164, 226, 0.67)) drop-shadow(0 0 6px rgba(255,255,255,0.3))'
+      : 'saturate(1.5) brightness(1.2) contrast(1.15)'
+  }), [isDarkMode])
+
   // Track active section on scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -417,9 +424,9 @@ export default function TDHPortfolio() {
         {/* Hero Section */}
         <section
           id="home"
-          className="pt-16 sm:pt-20 md:pt-24 min-h-screen flex items-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-black dark:to-gray-900 transition-all duration-500"
+          className="min-h-[calc(100vh-3.5rem)] sm:min-h-[calc(100vh-4rem)] flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-black dark:to-gray-900 transition-all duration-500 py-8 sm:py-12"
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 md:mb-6 leading-tight">
@@ -960,11 +967,8 @@ export default function TDHPortfolio() {
                     <img
                       src="/LogoGEU.png"
                       alt="GEU Logo"
-                      className={`h-16 sm:h-20 lg:h-24 w-auto transition-all duration-300 ${
-                        isDarkMode 
-                          ? '[filter:saturate(1.6)_brightness(1.3)_contrast(1.2)_drop-shadow(0_0_3px_rgba(19,164,226,0.67))_drop-shadow(0_0_6px_rgba(255,255,255,0.3))]'
-                          : '[filter:saturate(1.5)_brightness(1.2)_contrast(1.15)]'
-                      }`}
+                      className="h-16 sm:h-20 lg:h-24 w-auto transition-all duration-300"
+                      style={logoFilterStyle}
                       onError={(e) => {
                         // Fallback placeholder when image doesn't exist yet
                         e.currentTarget.style.display = 'none';
