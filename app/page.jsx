@@ -960,7 +960,12 @@ export default function TDHPortfolio() {
                     <img
                       src="/LogoGEU.png"
                       alt="GEU Logo"
-                      className="h-10 sm:h-12 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
+                      className="h-16 sm:h-20 lg:h-24 w-auto transition-all duration-300"
+                      style={{
+                        filter: isDarkMode 
+                          ? 'saturate(1.6) brightness(1.3) contrast(1.2) drop-shadow(0 0 3px rgba(19, 164, 226, 0.67)) drop-shadow(0 0 6px rgba(255,255,255,0.3))'
+                          : 'saturate(1.5) brightness(1.2) contrast(1.15)'
+                      }}
                       onError={(e) => {
                         // Fallback placeholder when image doesn't exist yet
                         e.currentTarget.style.display = 'none';
