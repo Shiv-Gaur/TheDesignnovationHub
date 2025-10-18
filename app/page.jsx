@@ -292,28 +292,7 @@ export default function TDHPortfolio() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Scroll animations
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
-    }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate-fade-in-up")
-          // Stop observing once animated to prevent re-triggering
-          observer.unobserve(entry.target)
-        }
-      })
-    }, observerOptions)
-
-    const animateElements = document.querySelectorAll(".animate-on-scroll")
-    animateElements.forEach((el) => observer.observe(el))
-
-    return () => observer.disconnect()
-  }, [])
 
   return (
     <div className="min-h-screen transition-colors duration-300">
@@ -442,7 +421,7 @@ export default function TDHPortfolio() {
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              <div className="animate-on-scroll">
+              <div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 hover:scale-105 transition-transform duration-500">
                   {siteData.hero.title.split("Design & Technology")[0]}
                   <span className="text-blue-600 dark:text-blue-400">Design & Technology</span>
@@ -469,7 +448,7 @@ export default function TDHPortfolio() {
                   </a>
                 </div>
               </div>
-              <div className="relative animate-on-scroll">
+              <div className="relative">
                 <div className="rounded-lg shadow-2xl bg-gray-900 dark:bg-black border border-gray-800 overflow-hidden font-mono w-full max-w-full lg:max-w-[560px]">
                   <div className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-gray-800/80 border-b border-gray-700 text-xs text-gray-300">
                     <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500" />
@@ -515,7 +494,7 @@ export default function TDHPortfolio() {
         {/* Projects Section */}
         <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-500">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16 animate-on-scroll">
+            <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 hover:scale-105 transition-transform duration-300">
                 Our Projects
               </h2>
@@ -525,7 +504,7 @@ export default function TDHPortfolio() {
             </div>
 
             {/* Project Filter Tags */}
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 sm:mb-12 animate-on-scroll px-2">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 sm:mb-12 px-2">
               {projectTags.map((tag) => (
                 <button
                   key={tag}
@@ -546,8 +525,7 @@ export default function TDHPortfolio() {
               {filteredProjects.map((project, index) => (
                 <div
                   key={project.id}
-                  className="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-on-scroll group"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  className="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105 group"
                 >
                   <div className="relative overflow-hidden">
                     <img
@@ -601,7 +579,7 @@ export default function TDHPortfolio() {
         {/* Events Section */}
         <section id="events" className="py-12 sm:py-16 lg:py-20 bg-white dark:bg-black transition-colors duration-500">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 sm:mb-16 animate-on-scroll">
+            <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 hover:scale-105 transition-transform duration-300">
                 Events & Workshops
               </h2>
@@ -614,8 +592,7 @@ export default function TDHPortfolio() {
               {events.map((event, index) => (
                 <div
                   key={event.id}
-                  className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-on-scroll group"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105 group"
                 >
                   <div className="relative overflow-hidden">
                     <img
@@ -664,7 +641,7 @@ export default function TDHPortfolio() {
         {/* Team Section */}
         <section id="team" className="py-12 sm:py-16 lg:py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-500">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 sm:mb-16 animate-on-scroll">
+            <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 hover:scale-105 transition-transform duration-300">
                 Meet the Team
               </h2>
@@ -679,8 +656,7 @@ export default function TDHPortfolio() {
                 .map((member, index) => (
                   <div
                     key={member.id}
-                    className="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-on-scroll group"
-                    style={{ animationDelay: `${index * 100}ms` }}
+                    className="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105 group"
                   >
                     <div className="relative overflow-hidden">
                       <img
@@ -726,7 +702,7 @@ export default function TDHPortfolio() {
         {/* Contact Section */}
         <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-white dark:bg-black transition-colors duration-500">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 sm:mb-16 animate-on-scroll">
+            <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 hover:scale-105 transition-transform duration-300">
                 Get in Touch
               </h2>
@@ -737,7 +713,7 @@ export default function TDHPortfolio() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
               {/* Contact Form */}
-              <div className="animate-on-scroll">
+              <div>
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
                   Send us a Message
                 </h3>
@@ -791,7 +767,7 @@ export default function TDHPortfolio() {
               </div>
 
               {/* Membership Form & Contact Info */}
-              <div className="space-y-6 sm:space-y-8 animate-on-scroll">
+              <div className="space-y-6 sm:space-y-8">
                 <div className="hover:scale-105 transition-transform duration-300">
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
                     Join TDH
@@ -941,7 +917,7 @@ export default function TDHPortfolio() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
               {/* Logo and Description */}
-              <div className="sm:col-span-2 animate-on-scroll">
+              <div className="sm:col-span-2">
                 <div className="flex items-center space-x-2 mb-3 sm:mb-4">
                   <img
                     src="/tdh-logo.png"
@@ -982,7 +958,7 @@ export default function TDHPortfolio() {
                   </h4>
                   <div className="flex items-center space-x-4">
                     <img
-                      src="/geu-logo.png"
+                      src="/LogoGEU.png"
                       alt="GEU Logo"
                       className="h-10 sm:h-12 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
                       onError={(e) => {
@@ -1000,7 +976,7 @@ export default function TDHPortfolio() {
               </div>
 
               {/* Quick Links */}
-              <div className="animate-on-scroll">
+              <div>
                 <h4 className="text-sm sm:text-base font-semibold mb-3 sm:mb-4">Quick Links</h4>
                 <ul className="space-y-1.5 sm:space-y-2 text-sm sm:text-base">
                   {["Home", "Projects", "Events", "Team", "Contact"].map((item) => (
@@ -1033,7 +1009,7 @@ export default function TDHPortfolio() {
               </div>
 
               {/* Contact Info */}
-              <div className="animate-on-scroll">
+              <div>
                 <h4 className="text-sm sm:text-base font-semibold mb-3 sm:mb-4">Contact Us</h4>
                 <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base">
                   <li className="flex items-start space-x-2">
@@ -1050,7 +1026,7 @@ export default function TDHPortfolio() {
               </div>
             </div>
 
-            <div className="border-t border-gray-800 mt-6 sm:mt-8 pt-5 sm:pt-6 lg:pt-8 flex flex-col md:flex-row justify-between items-center animate-on-scroll gap-2 sm:gap-0">
+            <div className="border-t border-gray-800 mt-6 sm:mt-8 pt-5 sm:pt-6 lg:pt-8 flex flex-col md:flex-row justify-between items-center gap-2 sm:gap-0">
               <p className="text-gray-300 text-xs sm:text-sm text-center md:text-left">
                 © 2025 TDH - The Designnovation Hub. All rights reserved.
               </p>
