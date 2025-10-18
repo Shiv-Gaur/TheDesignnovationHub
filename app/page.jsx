@@ -300,24 +300,24 @@ export default function TDHPortfolio() {
 
         {/* Navbar */}
                 {/* Navigation */}
-        <nav className="bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50 transition-colors duration-500">
-          <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-14 sm:h-16">
+        <nav className="bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50 transition-colors duration-500">
+          <div className="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-14 xs:h-16">
               {/* Logo */}
-              <div className="flex items-center space-x-1.5 sm:space-x-2">
+              <div className="flex items-center space-x-1 xs:space-x-1.5 sm:space-x-2 flex-shrink-0 min-w-0">
                 <img
                   src="/tdh-logo.png"
                   alt="TDH Logo"
-                  className="h-6 w-6 sm:h-8 sm:w-8 dark:invert"
+                  className="h-5 w-5 xs:h-6 xs:w-6 sm:h-8 sm:w-8 dark:invert flex-shrink-0"
                 />
-                <span className="text-sm sm:text-base md:text-lg font-bold text-gray-900 dark:text-white hover:scale-105 transition-transform duration-300">
+                <span className="text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-lg font-bold text-gray-900 dark:text-white hover:scale-105 transition-transform duration-300 truncate">
                   TheDesignnovationHub
                 </span>
               </div>
 
               {/* Desktop Navigation */}
-              <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-4">
+              <div className="hidden lg:block">
+                <div className="ml-6 xl:ml-10 flex items-baseline space-x-2 xl:space-x-4">
                   {["home", "projects", "events", "team", "contact"].map((item) => (
                     <button
                       key={item}
@@ -348,7 +348,7 @@ export default function TDHPortfolio() {
               </div>
 
               {/* Dark Mode Toggle & CTA Button */}
-              <div className="hidden md:flex items-center space-x-4">
+              <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
                 <button
                   onClick={toggleDarkMode}
                   className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all duration-300 hover:scale-110"
@@ -356,25 +356,25 @@ export default function TDHPortfolio() {
                 >
                   {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
                 </button>
-                <button className="bg-blue-600 dark:bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 dark:hover:bg-blue-600 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                <button className="bg-blue-600 dark:bg-blue-500 text-white px-4 xl:px-5 py-2 rounded-md text-sm font-medium hover:bg-blue-700 dark:hover:bg-blue-600 transition-all duration-300 hover:scale-105 hover:shadow-lg">
                   Join Us
                 </button>
               </div>
 
               {/* Mobile menu button */}
-              <div className="md:hidden flex items-center space-x-2">
+              <div className="lg:hidden flex items-center space-x-1 xs:space-x-2">
                 <button
                   onClick={toggleDarkMode}
-                  className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-110"
+                  className="p-1.5 xs:p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-110"
                   aria-label="Toggle dark mode"
                 >
-                  {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+                  {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
                 </button>
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 p-2 transition-all duration-300 hover:scale-110"
+                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 p-1.5 xs:p-2 transition-all duration-300 hover:scale-110"
                 >
-                  {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                  {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
                 </button>
               </div>
             </div>
@@ -382,27 +382,27 @@ export default function TDHPortfolio() {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800 animate-fade-in">
-              <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="lg:hidden bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800 animate-fade-in">
+              <div className="px-2 xs:px-3 pt-2 pb-3 space-y-1">
                 {["home", "projects", "events", "team", "contact"].map((item) => (
                   <button
                     key={item}
                     onClick={() => scrollToSection(item)}
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 w-full text-left capitalize transition-all duration-300"
+                    className="block px-3 py-2 rounded-md text-sm xs:text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 w-full text-left capitalize transition-all duration-300"
                   >
                     {item}
                   </button>
                 ))}
                 <a
                   href="/about"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 w-full text-left transition-all duration-300"
+                  className="block px-3 py-2 rounded-md text-sm xs:text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 w-full text-left transition-all duration-300"
                 >
                   About
                 </a>
                 {/* Hidden for now as requested */}
                 <a
                   href="/gallery"
-                  className="hidden px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 w-full text-left transition-all duration-300"
+                  className="hidden px-3 py-2 rounded-md text-sm xs:text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 w-full text-left transition-all duration-300"
                 >
                   Gallery
                 </a>
@@ -417,22 +417,22 @@ export default function TDHPortfolio() {
         {/* Hero Section */}
         <section
           id="home"
-          className="pt-12 sm:pt-16 min-h-screen flex items-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-black dark:to-gray-900 transition-all duration-500"
+          className="pt-16 sm:pt-20 md:pt-24 min-h-screen flex items-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-black dark:to-gray-900 transition-all duration-500"
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              <div>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 hover:scale-105 transition-transform duration-500">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
+            <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
+              <div className="order-2 lg:order-1">
+                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 md:mb-6 leading-tight">
                   {siteData.hero.title.split("Design & Technology")[0]}
                   <span className="text-blue-600 dark:text-blue-400">Design & Technology</span>
                 </h1>
-                <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 animate-fade-in-up delay-200">
+                <p className="text-sm xs:text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 md:mb-8 leading-relaxed">
                   {siteData.hero.subtitle}
                 </p>
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-in-up delay-300">
+                <div className="flex flex-col xs:flex-row gap-3 sm:gap-4">
                   <button
                     onClick={() => scrollToSection("contact")}
-                    className="bg-blue-600 dark:bg-blue-500 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-md text-sm sm:text-base font-medium hover:bg-blue-700 dark:hover:bg-blue-600 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                    className="bg-blue-600 dark:bg-blue-500 text-white px-5 xs:px-6 sm:px-8 py-2.5 sm:py-3 rounded-md text-sm sm:text-base font-medium hover:bg-blue-700 dark:hover:bg-blue-600 transition-all duration-300 hover:scale-105 hover:shadow-lg w-full xs:w-auto text-center"
                   >
                     Join Us
                   </button>
@@ -440,23 +440,23 @@ export default function TDHPortfolio() {
                     href={siteData.contact.whatsappLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="border border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 px-6 sm:px-8 py-2.5 sm:py-3 rounded-md text-sm sm:text-base font-medium hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 flex items-center justify-center space-x-2 hover:scale-105 hover:shadow-lg"
+                    className="border border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 px-5 xs:px-6 sm:px-8 py-2.5 sm:py-3 rounded-md text-sm sm:text-base font-medium hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 flex items-center justify-center space-x-2 hover:scale-105 hover:shadow-lg w-full xs:w-auto"
                   >
-                    <MessageCircle size={18} className="sm:w-5 sm:h-5" />
-                    <span className="hidden sm:inline">Join our WhatsApp Group</span>
-                    <span className="sm:hidden">WhatsApp Group</span>
+                    <MessageCircle size={18} className="sm:w-5 sm:h-5 flex-shrink-0" />
+                    <span className="hidden xs:inline">Join our WhatsApp Group</span>
+                    <span className="xs:hidden">WhatsApp</span>
                   </a>
                 </div>
               </div>
-              <div className="relative">
-                <div className="rounded-lg shadow-2xl bg-gray-900 dark:bg-black border border-gray-800 overflow-hidden font-mono w-full max-w-full lg:max-w-[560px]">
+              <div className="relative order-1 lg:order-2">
+                <div className="rounded-lg shadow-2xl bg-gray-900 dark:bg-black border border-gray-800 overflow-hidden font-mono w-full">
                   <div className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-gray-800/80 border-b border-gray-700 text-xs text-gray-300">
                     <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500" />
                     <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500" />
                     <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500" />
-                    <span className="ml-2 text-gray-400">main.jsx</span>
+                    <span className="ml-2 text-gray-400 text-[10px] sm:text-xs">main.jsx</span>
                   </div>
-                  <div className="p-4 sm:p-6 text-[10px] sm:text-[11px] md:text-sm leading-relaxed min-h-[280px] sm:min-h-[360px] flex flex-col">
+                  <div className="p-3 xs:p-4 sm:p-6 text-[9px] xs:text-[10px] sm:text-[11px] md:text-sm leading-relaxed min-h-[240px] xs:min-h-[280px] sm:min-h-[340px] md:min-h-[360px] flex flex-col">
                     <TypingCode
                       code={`// simple welcome banner\nconst org = 'TDH';\nfunction welcome(){\n  console.log('Preparing environment...');\n  setTimeout(()=>console.log('Welcome to ' + org + '!'),200);\n}\nwelcome();`}
                       speed={16}
@@ -474,14 +474,14 @@ export default function TDHPortfolio() {
                       loop
                       restartDelay={2200}
                     />
-                    <div className="mt-4 grid grid-cols-2 gap-4 text-xs">
-                      <div className="flex items-center gap-2 bg-gray-800/70 rounded-md px-3 py-2">
-                        <Users className="text-blue-400" size={16} />
-                        <span className="text-gray-200"><strong>{siteData.hero.stats.members}</strong> members</span>
+                    <div className="mt-3 sm:mt-4 grid grid-cols-2 gap-2 xs:gap-3 sm:gap-4 text-[10px] xs:text-xs">
+                      <div className="flex items-center gap-1.5 xs:gap-2 bg-gray-800/70 rounded-md px-2 xs:px-3 py-1.5 xs:py-2">
+                        <Users className="text-blue-400 flex-shrink-0" size={14} />
+                        <span className="text-gray-200 truncate"><strong>{siteData.hero.stats.members}</strong> members</span>
                       </div>
-                      <div className="flex items-center gap-2 bg-gray-800/70 rounded-md px-3 py-2">
-                        <Code className="text-green-400" size={16} />
-                        <span className="text-gray-200"><strong>{siteData.hero.stats.projects}</strong> projects</span>
+                      <div className="flex items-center gap-1.5 xs:gap-2 bg-gray-800/70 rounded-md px-2 xs:px-3 py-1.5 xs:py-2">
+                        <Code className="text-green-400 flex-shrink-0" size={14} />
+                        <span className="text-gray-200 truncate"><strong>{siteData.hero.stats.projects}</strong> projects</span>
                       </div>
                     </div>
                   </div>
@@ -960,12 +960,11 @@ export default function TDHPortfolio() {
                     <img
                       src="/LogoGEU.png"
                       alt="GEU Logo"
-                      className="h-16 sm:h-20 lg:h-24 w-auto transition-all duration-300"
-                      style={{
-                        filter: isDarkMode 
-                          ? 'saturate(1.6) brightness(1.3) contrast(1.2) drop-shadow(0 0 3px rgba(19, 164, 226, 0.67)) drop-shadow(0 0 6px rgba(255,255,255,0.3))'
-                          : 'saturate(1.5) brightness(1.2) contrast(1.15)'
-                      }}
+                      className={`h-16 sm:h-20 lg:h-24 w-auto transition-all duration-300 ${
+                        isDarkMode 
+                          ? '[filter:saturate(1.6)_brightness(1.3)_contrast(1.2)_drop-shadow(0_0_3px_rgba(19,164,226,0.67))_drop-shadow(0_0_6px_rgba(255,255,255,0.3))]'
+                          : '[filter:saturate(1.5)_brightness(1.2)_contrast(1.15)]'
+                      }`}
                       onError={(e) => {
                         // Fallback placeholder when image doesn't exist yet
                         e.currentTarget.style.display = 'none';

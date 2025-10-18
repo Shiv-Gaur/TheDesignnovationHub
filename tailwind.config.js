@@ -9,6 +9,10 @@ module.exports = {
     ...defaultConfig.theme,
     extend: {
       ...defaultConfig.theme.extend,
+      screens: {
+        'xs': '475px',
+        ...defaultConfig.theme.screens,
+      },
       colors: {
         ...defaultConfig.theme.extend.colors,
         border: "hsl(var(--border))",
