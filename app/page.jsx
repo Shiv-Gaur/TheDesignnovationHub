@@ -27,7 +27,7 @@ export default function TDHPortfolio() {
   const [isDarkMode, setIsDarkMode] = useState(false)
   const [siteData, setSiteData] = useState({
     hero: {
-      title: "Empowering Innovation through Design & Lolmao",
+      title: "Empowering Innovation through Design & Technology",
       subtitle: "Join TDH and be part of a community that bridges creativity and technology to solve real-world problems through innovative design thinking.",
       heroImage: "/placeholder.svg?height=500&width=600&text=TDH+Innovation+Hub",
       stats: { members: "200+", projects: "50+" },
