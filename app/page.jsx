@@ -302,8 +302,8 @@ export default function TDHPortfolio() {
 
 
   return (
-    <div className="min-h-screen transition-colors duration-300">
-      <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white">
+    <div className="min-h-screen transition-colors duration-300 overflow-x-hidden">
+      <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white overflow-x-hidden">
 
         {/* Navbar */}
                 {/* Navigation */}
@@ -476,7 +476,7 @@ export default function TDHPortfolio() {
                       ]}
                       consoleTitle="node main.jsx"
                       className="text-gray-200 flex-1"
-                      heightClass="h-80"
+                      heightClass="h-48 xs:h-56 sm:h-64 md:h-80"
                       ariaLabel="Animated welcome code"
                       loop
                       restartDelay={2200}
