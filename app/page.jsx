@@ -424,22 +424,22 @@ export default function TDHPortfolio() {
         {/* Hero Section */}
         <section
           id="home"
-          className="min-h-[calc(100vh-3.5rem)] sm:min-h-[calc(100vh-4rem)] flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-black dark:to-gray-900 transition-all duration-500 py-8 sm:py-12"
+          className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-black dark:to-gray-900 transition-all duration-500 py-6 sm:py-10 md:py-16 lg:py-20"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
-              <div className="order-2 lg:order-1">
-                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 md:mb-6 leading-tight">
+              <div>
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 md:mb-6 leading-tight">
                   {siteData.hero.title.split("Design & Technology")[0]}
                   <span className="text-blue-600 dark:text-blue-400">Design & Technology</span>
                 </h1>
-                <p className="text-sm xs:text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 md:mb-8 leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 md:mb-8 leading-relaxed">
                   {siteData.hero.subtitle}
                 </p>
-                <div className="flex flex-col xs:flex-row gap-3 sm:gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <button
                     onClick={() => scrollToSection("contact")}
-                    className="bg-blue-600 dark:bg-blue-500 text-white px-5 xs:px-6 sm:px-8 py-2.5 sm:py-3 rounded-md text-sm sm:text-base font-medium hover:bg-blue-700 dark:hover:bg-blue-600 transition-all duration-300 hover:scale-105 hover:shadow-lg w-full xs:w-auto text-center"
+                    className="bg-blue-600 dark:bg-blue-500 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-md text-sm sm:text-base font-medium hover:bg-blue-700 dark:hover:bg-blue-600 transition-all duration-300 hover:scale-105 hover:shadow-lg text-center"
                   >
                     Join Us
                   </button>
@@ -447,15 +447,15 @@ export default function TDHPortfolio() {
                     href={siteData.contact.whatsappLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="border border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 px-5 xs:px-6 sm:px-8 py-2.5 sm:py-3 rounded-md text-sm sm:text-base font-medium hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 flex items-center justify-center space-x-2 hover:scale-105 hover:shadow-lg w-full xs:w-auto"
+                    className="border border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 px-6 sm:px-8 py-2.5 sm:py-3 rounded-md text-sm sm:text-base font-medium hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 flex items-center justify-center space-x-2 hover:scale-105 hover:shadow-lg"
                   >
                     <MessageCircle size={18} className="sm:w-5 sm:h-5 flex-shrink-0" />
-                    <span className="hidden xs:inline">Join our WhatsApp Group</span>
-                    <span className="xs:hidden">WhatsApp</span>
+                    <span className="hidden sm:inline">Join our WhatsApp Group</span>
+                    <span className="sm:hidden">WhatsApp</span>
                   </a>
                 </div>
               </div>
-              <div className="relative order-1 lg:order-2">
+              <div className="relative">
                 <div className="rounded-lg shadow-2xl bg-gray-900 dark:bg-black border border-gray-800 overflow-hidden font-mono w-full">
                   <div className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-gray-800/80 border-b border-gray-700 text-xs text-gray-300">
                     <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500" />
@@ -463,7 +463,7 @@ export default function TDHPortfolio() {
                     <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500" />
                     <span className="ml-2 text-gray-400 text-[10px] sm:text-xs">main.jsx</span>
                   </div>
-                  <div className="p-3 xs:p-4 sm:p-6 text-[9px] xs:text-[10px] sm:text-[11px] md:text-sm leading-relaxed min-h-[240px] xs:min-h-[280px] sm:min-h-[340px] md:min-h-[360px] flex flex-col">
+                  <div className="p-3 sm:p-4 md:p-6 text-[10px] sm:text-[11px] md:text-sm leading-relaxed min-h-[200px] sm:min-h-[280px] md:min-h-[340px] lg:min-h-[360px] flex flex-col">
                     <TypingCode
                       code={`// simple welcome banner\nconst org = 'TDH';\nfunction welcome(){\n  console.log('Preparing environment...');\n  setTimeout(()=>console.log('Welcome to ' + org + '!'),200);\n}\nwelcome();`}
                       speed={16}
@@ -481,12 +481,12 @@ export default function TDHPortfolio() {
                       loop
                       restartDelay={2200}
                     />
-                    <div className="mt-3 sm:mt-4 grid grid-cols-2 gap-2 xs:gap-3 sm:gap-4 text-[10px] xs:text-xs">
-                      <div className="flex items-center gap-1.5 xs:gap-2 bg-gray-800/70 rounded-md px-2 xs:px-3 py-1.5 xs:py-2">
+                    <div className="mt-3 sm:mt-4 grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 text-[10px] sm:text-xs">
+                      <div className="flex items-center gap-1.5 sm:gap-2 bg-gray-800/70 rounded-md px-2 sm:px-3 py-1.5 sm:py-2">
                         <Users className="text-blue-400 flex-shrink-0" size={14} />
                         <span className="text-gray-200 truncate"><strong>{siteData.hero.stats.members}</strong> members</span>
                       </div>
-                      <div className="flex items-center gap-1.5 xs:gap-2 bg-gray-800/70 rounded-md px-2 xs:px-3 py-1.5 xs:py-2">
+                      <div className="flex items-center gap-1.5 sm:gap-2 bg-gray-800/70 rounded-md px-2 sm:px-3 py-1.5 sm:py-2">
                         <Code className="text-green-400 flex-shrink-0" size={14} />
                         <span className="text-gray-200 truncate"><strong>{siteData.hero.stats.projects}</strong> projects</span>
                       </div>
@@ -499,13 +499,13 @@ export default function TDHPortfolio() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-500">
+        <section id="projects" className="py-12 sm:py-16 lg:py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-500">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 hover:scale-105 transition-transform duration-300">
+            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 hover:scale-105 transition-transform duration-300">
                 Our Projects
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
                 Innovative solutions created by our talented members
               </p>
             </div>
@@ -725,7 +725,7 @@ export default function TDHPortfolio() {
                   Send us a Message
                 </h3>
                 <form onSubmit={handleContactSubmit} className="space-y-4 sm:space-y-6">
-                  <div className="hover:scale-105 transition-transform duration-300">
+                  <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Name
                     </label>
@@ -737,7 +737,7 @@ export default function TDHPortfolio() {
                       className="w-full px-3 sm:px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300 hover:shadow-md text-sm sm:text-base"
                     />
                   </div>
-                  <div className="hover:scale-105 transition-transform duration-300">
+                  <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Email
                     </label>
@@ -749,7 +749,7 @@ export default function TDHPortfolio() {
                       className="w-full px-3 sm:px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300 hover:shadow-md text-sm sm:text-base"
                     />
                   </div>
-                  <div className="hover:scale-105 transition-transform duration-300">
+                  <div>
                     <label
                       htmlFor="message"
                       className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
@@ -775,7 +775,7 @@ export default function TDHPortfolio() {
 
               {/* Membership Form & Contact Info */}
               <div className="space-y-6 sm:space-y-8">
-                <div className="hover:scale-105 transition-transform duration-300">
+                <div>
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
                     Join TDH
                   </h3>
@@ -851,18 +851,18 @@ export default function TDHPortfolio() {
                   </form>
                 </div>
 
-                <div className="hover:scale-105 transition-transform duration-300">
+                <div>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
                     Contact Information
                   </h3>
                   <div className="space-y-3 sm:space-y-4">
-                    <div className="flex items-center space-x-3 hover:scale-110 transition-transform duration-300">
+                    <div className="flex items-center space-x-3">
                       <Mail className="text-blue-600 dark:text-blue-400 flex-shrink-0" size={18} />
                       <span className="text-sm sm:text-base text-gray-600 dark:text-gray-300 break-all">
                         {siteData.contact.email}
                       </span>
                     </div>
-                    <div className="flex items-start space-x-3 hover:scale-110 transition-transform duration-300">
+                    <div className="flex items-start space-x-3">
                       <MapPin className="text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" size={18} />
                       <span className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
                         {siteData.contact.location}
@@ -871,7 +871,7 @@ export default function TDHPortfolio() {
                   </div>
                 </div>
 
-                <div className="hover:scale-105 transition-transform duration-300">
+                <div>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
                     Follow Us
                   </h3>
@@ -897,7 +897,7 @@ export default function TDHPortfolio() {
                   </div>
                 </div>
 
-                <div className="bg-blue-50 dark:bg-blue-900/20 p-4 sm:p-6 rounded-lg hover:scale-105 transition-transform duration-300">
+                <div className="bg-blue-50 dark:bg-blue-900/20 p-4 sm:p-6 rounded-lg">
                   <h4 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm sm:text-base">
                     Join Our WhatsApp Community
                   </h4>
